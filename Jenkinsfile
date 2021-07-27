@@ -19,6 +19,12 @@ pipeline {
       }
     }
     stage('Deploy'){
+      when {
+        expression {
+            return env.BRANCH_NAME != 'main';
+        }
+      }
+      }
       steps {
         echo 'deploy'
       }
@@ -29,10 +35,10 @@ post {
     echo "${currentBuild.currentResult}"
   }
  success {
-     echo "${BUILD_URL} has result success"
+     echo "${env.BUILD_URL} has result success"
       }
  failure {
-     echo "${BUILD_URL} has result fail"
+     echo "${env.BUILD_URL} has result fail"
       }
      }
 }
