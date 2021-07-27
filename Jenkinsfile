@@ -30,13 +30,12 @@ pipeline {
         }
       steps {
         echo 'deploy'
-        withCredentials([
-          usernamePassword(credentails: 'jenkins',usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')] {
+        withCredentials([usernamePassword(credentails: 'jenkins',usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]{
            sh 'echo deploy'
         }
-      }
      }
   }
+}
 post {
   always {
     echo "${currentBuild.currentResult}"
