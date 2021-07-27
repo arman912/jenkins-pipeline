@@ -13,7 +13,7 @@ pipeline {
     }
     stage('Build'){
       steps {
-        echo 'building software app ${APP_VERSION}'
+        echo "building software app ${APP_VERSION}"
       }
     }
     stage('Test'){
