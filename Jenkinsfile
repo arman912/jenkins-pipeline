@@ -31,10 +31,10 @@ pipeline {
       steps {
         echo 'deploy'
         withCredentials([
-          usernamePassword(credentails: 'jenkins',usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]
+          usernamePassword(credentails: 'jenkins',usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')] {
            sh 'echo deploy'
+        }
       }
-    }
   }
 post {
   always {
