@@ -29,13 +29,12 @@ pipeline {
           }
         }
       steps {
-        echo 'deploy'
-        withCredentials([usernamePassword(credentials: 'jenkins',usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]{
-           sh 'echo $PASSWORD'
+        withCredentials([usernamePassword(credentials: 'jenkins',usernameVariable: USERNAME, passwordVariable: PASSWORD)]){
+           sh "echo $PASSWORD"
+         }
         }
-     }
-  }
-}
+    }
+ }
 post {
   always {
     echo "${currentBuild.currentResult}"
