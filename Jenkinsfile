@@ -20,11 +20,10 @@ pipeline {
     }
     stage('Deploy'){
       when {
-        expression {
-            return env.BRANCH_NAME != 'main'
+          expression {
+            BRANCH_NAME = 'dev' || BRANCH_NAME == 'test'
+          }
         }
-      }
-      }
       steps {
         echo 'deploy'
       }
