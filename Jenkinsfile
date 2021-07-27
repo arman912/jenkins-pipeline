@@ -35,6 +35,7 @@ pipeline {
            sh 'echo deploy'
         }
       }
+     }
   }
 post {
   always {
