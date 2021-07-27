@@ -24,4 +24,15 @@ pipeline {
       }
     }
   }
+post {
+  always {
+    echo "${currentBuild.currentResult}"
+  }
+ success {
+     echo "${env.BUILD_URL} has result success"
+      }
+ failure {
+     echo "${env.BUILD_URL} has result fail"
+      }
+     }
 }
