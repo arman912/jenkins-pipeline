@@ -29,8 +29,8 @@ pipeline {
           }
         }
       steps {
-        withCredentials([usernamePassword(credentials: 'jenkins',usernameVariable: USERNAME, passwordVariable: PASSWORD)]){
-           sh "echo $PASSWORD"
+        withCredentials([usernamePassword(credentials: 'jenkins', usernameVariable: USER, passwordVariable: PASSWORD)]){
+           sh "echo $USER $PASSWORD"
          }
         }
     }
